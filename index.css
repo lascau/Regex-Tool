@@ -1,0 +1,47 @@
+body { 
+    display: flex;
+}
+
+#button-container { 
+    margin: 0 10px; 
+    align-self: center; 
+    flex: 0;
+}
+
+button{ 
+    display: block; 
+    padding: 8px 4px;
+    position: relative;
+    left: 780px;
+    top: -1280px;
+}
+
+#caseta{
+    padding:0px;
+    min-height: 40px;
+    width:60%;
+    height:30%;
+    margin: 10px 10px 100px 120px;
+    position: relative;
+    left: 350px;
+}
+
+#one{
+    position: relative;
+    top: -400px;
+}
+#two{
+    position: relative;
+    top: -1645px;
+    left: 1000px;
+}
+
+textarea{ 
+    resize: vertical; 
+    min-height: 400px;
+    min-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #DCDCDC;
+    margin: 400px 2.5%;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regex Tool</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <br><br><br><br>
+<div>
+    <div>
+        <textarea id = "caseta">([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)</textarea>
+    </div>
+    <textarea id="one">
+boleh di kirim ke email saya ekoprasetyo.crb@outlook.com tks...
+boleh minta kirim ke db.maulana@gmail.com. 
+dee.wien@yahoo.com. .
+deninainggolan@yahoo.co.id Senior Quantity Surveyor
+Fajar.rohita@hotmail.com, terimakasih bu Cindy Hartanto
+firmansyah1404@gmail.com saya mau dong bu cindy
+fransiscajw@gmail.com 
+Hi Cindy ...pls share the Salary guide to donny_tri_wardono@yahoo.co.id thank a
+    </textarea>
+
+        <div id="button-container">
+            <button onclick="changeContent()">
+                The result is on the right side just click on me :) &rarr;
+            </button>
+        </div>
+    <textarea id="two"></textarea>
+</div>  
+    <script> 
+        function changeContent() {
+            var text = document.getElementById('one').value;
+            var regex_input = document.getElementById('caseta').value;
+            try {
+                var regex = new RegExp(regex_input, 'gi');
+            } catch(e) {
+                alert(e);
+                return false;
+            }
+            var all_matches = text.match(regex);
+            var outputTextArea = "";
+            if (all_matches != null) {
+                for (const currentMatch of all_matches) {
+                    outputTextArea = outputTextArea + currentMatch + "\n";
+                }
+                document.getElementById('two').value = outputTextArea;
+            } else {
+                document.getElementById('two').value = "No matches sorry!";
+            }
+        } 
+    </script> 
+</body>
+</html>
